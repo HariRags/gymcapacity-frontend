@@ -37,6 +37,8 @@ body {
   width: 39.097%;
   border-radius: 0 0 0 50px;
   height: 92vh;
+  position:fixed;
+  right:0;
 }
 #removeButton {
   display: inline-flex;
@@ -82,3 +84,56 @@ body {
   font-size: 2rem;
   align-self: flex-end;
 }
+
+/* -----------css for form-------------- */
+
+.form {
+  width: 50%;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form input[type="text"],
+select,
+textarea, .form-name {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+
+.form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-left: 40%;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+
+} 
+

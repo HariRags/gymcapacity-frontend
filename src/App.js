@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState } from "react";
+import Form from "./Form";
+import Popup from "./Popup";
 
 function Page2() {
   const Student = {
@@ -7,6 +9,8 @@ function Page2() {
     name: "",
   };
   const [students, setStudents] = useState([]);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   function addStudent() {
     const newStudent = { ...Student, id: generateUniqueId() };
     setStudents([...students, newStudent]);
@@ -19,7 +23,8 @@ function Page2() {
     return crypto.randomUUID();
   }
   return (
-    <main className="container">
+
+    <div className="container">
       <section className="main-content">
         <header className="header">
           {students.length} people are on the grind!
@@ -28,7 +33,7 @@ function Page2() {
           {students.map((student) => (
             <div key={student.id} id="item">
               <button
-                onClick={() => removeStudent(student.id)}
+                onClick={() =>{ setIsPopupOpen(true); removeStudent(student.id);}}
                 id="removeButton"
               >
                 {" "}
@@ -44,13 +49,12 @@ function Page2() {
           </button>
         </article>
       </section>
-      <aside className="feedback">Event</aside>
-    </main>
+      <aside className="feedback">{<Form/>}</aside>
+      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)}/>
+    </div>
+    
   );
 }
 
-function App() {
-  return <Page2></Page2>;
-}
 
-export default App;
+export default Page2;
