@@ -3,6 +3,7 @@ import { useState } from "react";
 import Form from "./Form";
 import Popup from "./Popup";
 
+
 function Page2() {
   const Student = {
     id: "",
