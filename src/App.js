@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Form from "./Form";
 import Popup from "./Popup";
-
+import Details from "./Details";
 
 function Page2() {
   const Student = {
@@ -58,4 +58,4 @@ function Page2() {
 }
 
 
-export default Page2;
+export default Details;

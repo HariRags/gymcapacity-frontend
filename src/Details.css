@@ -2,7 +2,7 @@ header{
     margin:0;
     padding: 0;
 }
-.main{
+.details-main{
     margin:0;
     padding: 0;
     min-height: 95vh;
@@ -13,7 +13,7 @@ header{
     background-position: bottom;
 }
 
-.header{
+.details-header{
     margin-left: 27.5vw;
     margin-top: 5vh;
     width: max(44.93vw,300px);
@@ -29,7 +29,7 @@ header{
 
 }
 
-form{
+.details-form{
     margin-left:27.569vw;
     margin-top: 6.01vh;
     width: max(44.93vw,300px);

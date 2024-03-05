@@ -4,9 +4,9 @@ import "./Details.css"
 
 function Details() {
     return (
-        <div className="main">
-            <header className="header"> Please enter your details</header>
-            <form>
+        <div className="details-main">
+            <header className="details-header"> Please enter your details</header>
+            <form className="details-form">
                 <div className="roll-no">
                     <UserRound className="user"/>
                     <input type="text" required placeholder="Roll No."></input>
