@@ -30,6 +30,7 @@ body {
   margin-top: 8.984vh;
   display: flex;
   flex-direction: column;
+  
 }
 
 .feedback {
@@ -58,6 +59,7 @@ body {
   align-items: center;
   height: 7vh;
   margin-bottom: 2vw;
+  
 }
 #name {
   margin-left: 5vw;
@@ -112,13 +114,14 @@ body {
   margin-bottom: 5px;
 }
 
-.form input[type="text"],
+.form input,
 select,
-textarea, .form-name {
+textarea {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 20px;
+  background-color: white;
 }
 
 

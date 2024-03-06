@@ -10,7 +10,7 @@
 
 import "./Popup.css";
 import {useRef} from 'react';
-import { User } from 'lucide-react';
+import { UserRound } from 'lucide-react';
 
 const Popup = ({ isOpen, onClose }) => {
     
@@ -29,10 +29,11 @@ const Popup = ({ isOpen, onClose }) => {
       <div className="popup-form" ref={PopupRef}>
         <form>
             <div className="roll-exit">
-                <div className="icon"><User style={{height:"90%", width:"50%", paddingLeft:"80%"}} /></div>
-                <input type="text" placeholder="      Roll No." id="confirm-exit" name="exit-roll" required/>
+                <UserRound className="User"/> 
+                <input type="text" placeholder="Roll No." id="confirm-exit" name="exit-roll" required/>
+                
             </div>
-            <button>Exit</button>
+            <button className="exit-button">Exit</button>
         </form>
       </div>
     </div>

@@ -58,4 +58,4 @@ function Page2() {
 }
 
 
-export default Details;
+export default Page2;
