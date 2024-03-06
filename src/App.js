@@ -1,61 +1,35 @@
-import "./App.css";
-import { useState } from "react";
-import Form from "./Form";
-import Popup from "./Popup";
-import Details from "./Details";
+// src/App.js
+import React, { useState } from 'react';
+import './App.css';
+import EnterPage from './components/EnterPage';
+import ViewPage from './components/ViewPage';
 
-function Page2() {
-  const Student = {
-    id: "",
-    name: "",
+function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const handleButtonClick = (page) => {
+    setCurrentPage(page);
   };
-  const [students, setStudents] = useState([]);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  function addStudent() {
-    const newStudent = { ...Student, id: generateUniqueId() };
-    setStudents([...students, newStudent]);
-  }
-  function removeStudent(studentID) {
-    setStudents(students.filter((student) => student.id !== studentID));
-  }
-  // since i didn't have acess to id yet i made a random id generator
-  function generateUniqueId() {
-    return crypto.randomUUID();
-  }
   return (
-
-    <div className="container">
-      <section className="main-content">
-        <header className="header">
-          {students.length} people are on the grind!
-        </header>
-        <article className="list">
-          {students.map((student) => (
-            <div key={student.id} id="item">
-              <button
-                onClick={() =>{ setIsPopupOpen(true); removeStudent(student.id);}}
-                id="removeButton"
-              >
-                {" "}
-                -{" "}
-              </button>
-              <div id="name">
-                <div className="text">Manish</div>
-              </div>
-            </div>
-          ))}
-          <button onClick={addStudent} id="addButton">
-            Enter
-          </button>
-        </article>
-      </section>
-      <aside className="feedback">{<Form/>}</aside>
-      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)}/>
+    <div className="app-container">
+      <div className="left-container">
+        <h1><button1>GYM VIEW</button1></h1>
+        <div>
+          <h1><button onClick={() => handleButtonClick('enter')}><h1>Enter</h1></button></h1>
+          <h1><button onClick={() => handleButtonClick('view')}><h1>View</h1></button></h1>
+        </div>
+        {currentPage === 'enter' && <EnterPage />}
+        {currentPage === 'view' && <ViewPage />}
+      </div>
+      <div className="right-container">
+        
+        <div className="overlay-text">
+        <p className="overlay-text"><h1>Suffer the pain<br></br>of discipline.<br></br>Or suffer the<br></br>pain of regret...</h1></p>
+      </div>
+      </div>
     </div>
-    
   );
 }
 
-
-export default Details;
+export default App;
