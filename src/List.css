@@ -1,0 +1,143 @@
+#root {
+    font-family: Montserrat;
+  }
+  body {
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+  }
+  .main-content {
+    background-color: #ffffff;
+    width: 60.903vw;
+  }
+  .header {
+    background-color: #aff1ff;
+    width: 49.3vw;
+    margin: 0 5.69vw;
+    height: 5.91vh;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    padding: 3vh 0;
+    font-size: 2rem;
+  }
+  .list {
+    margin: 0 5.69vw;
+    margin-top: 8.984vh;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .feedback {
+    background-color: #aff1ff;
+    width: 39.097%;
+    border-radius: 0 0 0 50px;
+    height: 92vh;
+    position:fixed;
+    right:0;
+  }
+  #removeButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    border: none;
+    color: #ff0000;
+    font-weight: 900;
+    font-size: 32px;
+  }
+  
+  #item {
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    margin-bottom: 2vw;
+    
+  }
+  #name {
+    margin-left: 5vw;
+    background: #58e1ff;
+    width: 41vw;
+    height: 7vh;
+    border-radius: 40px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .text {
+    margin-left: 6vw;
+  }
+  
+  #addButton {
+    margin-top: 2vh;
+    background-color: #58ff69;
+    width: 15vw;
+    height: 7vh;
+    border: none;
+    border-radius: 40px;
+    font-size: 2rem;
+    align-self: flex-end;
+  }
+  
+  /* -----------css for form-------------- */
+  
+  .form {
+    width: 50%;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .form h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 95%;
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+  }
+  
+  
+  .form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-left: 40%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background-color: #0056b3;
+  
+  } 
+  
+  
