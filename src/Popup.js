@@ -1,12 +1,4 @@
-// const Popup = () => {
-//     return ( 
-//         <div className="fixed inset-0 bg-black bg opacity-30 background-blur-sm">
-//             Modal
-//         </div>
-//      );
-// }
- 
-// export default Popup;
+
 
 import "./Popup.css";
 import {useRef} from 'react';
