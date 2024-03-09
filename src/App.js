@@ -1,7 +1,25 @@
 
-import { useState } from "react";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Details from "./Details";
 import Page2 from "./List";
 
-export default Page2;
+const App = () => {
+    return ( 
+        <Router>
+            <div className="app">
+                <Switch>
+                    <Route exact path="/">
+                        <Details/>
+                    </Route>
+                    <Route path="/home">
+                        <Page2/>
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+     );
+}
+ 
+export default App;
+
 
