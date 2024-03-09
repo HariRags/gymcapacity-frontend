@@ -205,6 +205,11 @@
 
   }
 
+  #removeButton{
+    width: 7vw;
+    height: 7vw;
+  }
+
   .feedback {
     width: 90%;
     border-radius: 40px;

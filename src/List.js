@@ -2,6 +2,7 @@ import "./List.css";
 import { useState } from "react";
 import Form from "./Form";
 import Popup from "./Popup";
+import {UserMinus} from 'lucide-react';
 import Details from "./Details";
 
 function Page2() {
@@ -37,8 +38,7 @@ function Page2() {
                 onClick={() =>{ setIsPopupOpen(true); removeStudent(student.id);}}
                 id="removeButton"
               >
-                {" "}
-                -{" "}
+                <UserMinus />
               </button>
               <div id="name">
                 <div className="text">Manish</div>
