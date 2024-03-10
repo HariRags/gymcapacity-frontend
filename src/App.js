@@ -21,6 +21,6 @@ import Page2 from "./List";
 //      );
 // }
  
-export default Page2;
+export default Details;
 
 

@@ -5,12 +5,20 @@ header{
 .details-main{
     margin:0;
     padding: 0;
-    min-height: 95vh;
+    /* min-height: 95vh; */
     font-family: Monsterrat;
-    background: url('../public/backgroundv2.jpg');
+    /* background: url('../public/backgroundv5.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-size:cover; */
+    /* background-position: bottom; */
+}
+
+.details-background{
+    background: url('../public/backgroundv5.png');
+    background-size: 100%;
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: top;
 }
 
 /* #bg2{
@@ -85,6 +93,10 @@ header{
     justify-content: baseline;
     flex-direction: row;
     align-items: center;
+}
+
+.name input, .roll-no input{
+    outline: none;
 }
 
 #submit-button{

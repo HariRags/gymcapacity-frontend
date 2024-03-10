@@ -4,6 +4,7 @@ import "./Details.css"
 
 function Details() {
     return (
+        <div className="details-background">
         <div className="details-main">
            
             <header className="details-header"> Please enter your details</header>
@@ -18,7 +19,8 @@ function Details() {
                 </div>
                 <button type="submit" id="submit-button">Proceed</button>
             </form>
-            <div className="background"></div>
+            
+        </div>
         </div>
     )
 }
