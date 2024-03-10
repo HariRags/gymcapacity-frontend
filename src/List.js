@@ -114,11 +114,11 @@ function Page2() {
               <div key={index} id="item">
                 <button
                   onClick={() => { setIsPopupOpen(true); removeStudent(student.id); }}
-                  id={isExitMode ? 'inexit-remove-button':'removeButton'}
+                  id={isExitMode ? 'removeButton':'inexit-remove-button'}
                 >
                   <UserMinus />
                 </button>
-                <div id={isExitMode ? 'inexit-name' : 'name'}>
+                <div id={isExitMode ?  'name':'inexit-name'}>
                   <div className="text">{student.name}</div>
                 </div>
               </div>
