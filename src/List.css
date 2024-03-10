@@ -73,7 +73,7 @@
     margin-left: 5vw;
     background: #58e1ff;
     width: 41vw;
-    height: 7vh;
+    height: 7.3vh;
     border-radius: 20px;
     font-size: 2rem;
     display: flex;
@@ -278,4 +278,18 @@
 #addButton{
   margin-left:2.78vw;
 }
-  
+
+#inexit-remove-button{
+  display:none;
+}
+#inexit-name{
+  width:42.36vw;
+  margin-left: 5vw;
+  background: #58e1ff;
+  height: 7.3vh;
+  border-radius: 20px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 14px 29px 0px #00000040;
+}
