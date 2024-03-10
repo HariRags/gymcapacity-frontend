@@ -293,3 +293,22 @@
   align-items: center;
   box-shadow: 0px 14px 29px 0px #00000040;
 }
+
+#inexit-exit-button{
+  background: none;
+  border: none;
+  border-radius: 20px;
+  background: #45FFBC;
+  font-family: Montserrat,sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0em;
+  width: 19.8vw;
+  height: 7.3vh;
+  margin-left:24.3vw;
+}
+
+#inexit-enter-button{
+  display: none;
+}
