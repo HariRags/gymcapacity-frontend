@@ -5,6 +5,7 @@ import "./Details.css"
 function Details() {
     return (
         <div className="details-main">
+           
             <header className="details-header"> Please enter your details</header>
             <form className="details-form">
                 <div className="roll-no">

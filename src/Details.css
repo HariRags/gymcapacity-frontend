@@ -7,25 +7,38 @@ header{
     padding: 0;
     min-height: 95vh;
     font-family: Monsterrat;
-    background: url('../public/backgroundv2.jpg');
+    background: url('../public/backgroundv5.png');
     background-repeat: no-repeat;
     background-size:cover;
-    background-position: bottom;
+    background-position: top;
 }
+
+/* #bg2{
+    margin-top: 0;
+    margin-left: ;
+}
+
+#bg1{
+    margin-left: 0;
+    margin-top: 1vh;
+} */
+
+
 
 .details-header{
     margin-left: 27.5vw;
     margin-top: 5vh;
     width: max(44.93vw,300px);
     height: 15.37vh;
-    border-radius: 2.8vw;
+    border-radius: 1.38vw;
     text-align: center;
     line-height: 15.37vh;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 500;
     box-shadow: 0px 14px 29px 0px #00000040;
     color: #464646;
-    background-color: #fff;
+    background-color: rgb(255,255,255,0.6);
+    backdrop-filter: blur(3px);
 
 }
 
@@ -35,7 +48,7 @@ header{
     width: max(44.93vw,300px);
     height: 57.31vh;
     text-align: center;
-    border-radius: 2.8vw;
+    border-radius: 1.38vw;
     box-shadow: 0px 14px 29px 0px #00000040;
     display: flex;
     flex-direction: column;
@@ -49,7 +62,7 @@ header{
     padding-left: 2vw;
     width: 34.70vw;
     height:08.09vh;
-    border-radius: 2.8vw;
+    border-radius: 1.38vw;
     box-shadow: 0px 14px 29px 0px #00000040;
     background-color: #AFF1FF;
     display: flex;
@@ -65,7 +78,7 @@ header{
     padding-left: 2vw;
     width: 34.70vw;
     height:08.09vh;
-    border-radius: 2.8vw;
+    border-radius: 1.38vw;
     box-shadow: 0px 14px 29px 0px #00000040;
     background-color: #AFF1FF;
     display: flex;
@@ -75,7 +88,24 @@ header{
 }
 
 #submit-button{
-    width:29.30vw;
+    margin-top: 6.01vh;
+    margin-left: 3.611vw;
+    padding: 1vh 1vw;
+    padding-left: 2vw;
+    width: 37.70vw;
+    height:10.64vh;
+    border-radius: 1.38vw;
+    box-shadow: 0px 14px 29px 0px #00000040;
+    border:none;
+    background-color: #58E1FF;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    /* width:29.30vw;
     height: 5.37vh;
     margin-left: 7.77vw;
     margin-top: 10.7vh;
@@ -83,7 +113,7 @@ header{
     border: none;
     background: #58E1FF;
     box-shadow: 0px 14px 29px 0px #00000040;
-    font-size: 1.5rem;
+    font-size: 1.5rem; */
 }
 
 .roll-no input, .name input{
