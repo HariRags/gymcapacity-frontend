@@ -1,9 +1,12 @@
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import "./List.css";
 import { useState } from "react";
 import Form from "./Form";
 import Popup from "./Popup";
 import {UserMinus} from 'lucide-react';
 import Details from "./Details";
+import Lastpage from "./Lastpage";
 
 function Page2() {
   const Student = {
@@ -12,6 +15,8 @@ function Page2() {
   };
   const [students, setStudents] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const history = useHistory();
+
 
   function addStudent() {
     const newStudent = { ...Student, id: generateUniqueId() };
@@ -51,7 +56,7 @@ function Page2() {
         </article>
       </section>
       <aside className="feedback">{<Form/>}</aside>
-      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)}/>
+      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)} onExitButtonClick={() => history.push('/lastpage')}/>
       <div className="footer">----------------------------------------</div>
     </div>
     

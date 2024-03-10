@@ -4,7 +4,7 @@ import "./Popup.css";
 import {useRef} from 'react';
 import { UserRound } from 'lucide-react';
 
-const Popup = ({ isOpen, onClose }) => {
+const Popup = ({ isOpen, onClose, onExitButtonClick }) => {
     
     const PopupRef=useRef();
     const closePopup=(e)=>{
@@ -12,6 +12,13 @@ const Popup = ({ isOpen, onClose }) => {
             onClose();
         }
     }
+
+    const handleExitButtonClick = () => {
+      // Placeholder function for exit button click action
+      
+      onExitButtonClick(); // Invoke the callback to open the Lastpage component
+      onClose(); // Close the popup after handling the exit button click
+    }; 
 
   return isOpen ? (
     <div className="popup-overlay" onClick={closePopup}>
@@ -25,7 +32,7 @@ const Popup = ({ isOpen, onClose }) => {
                 <input type="text" placeholder="Roll No." id="confirm-exit" name="exit-roll" required/>
                 
             </div>
-            <button className="exit-button">Exit</button>
+            <button className="exit-button" onClick={handleExitButtonClick}>Exit</button>
         </form>
       </div>
     </div>
