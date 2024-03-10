@@ -89,7 +89,7 @@ function Page2() {
     <div className="container">
       <section className="main-content">
         <header className="header">
-          <strong>{actualLength()}/20 </strong>people are on the grind!
+          <strong>{isExitMode? actualLength():`${actualLength()}/20`} </strong>people are on the grind!
         </header>
         {/* <article className="list">
           {students.filter(student=>student.name!== '').map((student) => (
