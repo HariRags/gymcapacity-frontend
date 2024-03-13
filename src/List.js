@@ -142,7 +142,7 @@ function Page2() {
         
       </section>
       <aside className="feedback">{<Form/>}</aside>
-      {/* <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)}/> */}
+      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)}/>
       {/* <div className="footer">----------------------------------------</div> */}
       
     </div>
