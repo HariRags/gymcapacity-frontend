@@ -1,4 +1,6 @@
 /* src/Fstpage.css */
+
+
 .app-container {
     display: flex;
     margin:0;
@@ -13,8 +15,15 @@
   .left-container {
     width: 70%;
     padding: 0;
-    //text-indent:130px;
+    /* text-indent:130px; */
     
+  }
+
+  
+  .left-container a {
+    /* removes text decoration from enter and view  */
+    color: inherit;
+    text-decoration: none;
   }
   
   p1{
@@ -38,7 +47,7 @@
     background: url('../public/rec.jpg');
     background-repeat: no-repeat;
     background-size:cover;
-    background-position:;
+    /* background-position:; */
   }
   
   .image-overlay {
@@ -59,7 +68,7 @@
     text-align: left;
     width: 394px;
     cursor: pointer;
-    margin: ;
+    /* margin: ; */
     margin-top: 130px;
     margin-left: 45px;
   
@@ -87,7 +96,7 @@
       justify-content:center;
       flex-direction: row;
       align-items: center;
-    
+      text-decoration: none;
   }
   
   button3 {
@@ -108,8 +117,9 @@
     background-color: #45FFBC;
     display: flex;
     justify-content:center;
-    //flex-direction: row;
+    /* //flex-direction: row; */
     align-items: center;
+    text-decoration: none;
   }
   
   button:hover {
@@ -147,6 +157,10 @@
     
     
   }
+
+
+
+
   
   /* Add responsive styles as needed ....... */
   

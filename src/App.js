@@ -10,30 +10,32 @@ const App = () => {
         <Router>
             <div className="app">
             
+            
                 <Switch>
-                    <Route exact path="/">
+                    <Route path="/enter">
                         <Details/>
                     </Route>
                          
-                <Route  path="/">
-                {/* Render the Fstpage component on the /home route */}
-                <Fstpage />
-                 </Route>
+                    <Route  exact path="/">
+                        {/* Render the Fstpage component on the /home route */}
+                        <Fstpage />
+                    </Route>
 
-                 <Route path="/lastpage">
-                 {/* Render the Lastpage component here */}
-                 <Lastpage />
-                 </Route>
+                    <Route path="/exit-popup">
+                        {/* Render the Lastpage component here */}
+                        <Lastpage />
+                    </Route>
                    
                     <Route path="/home">
                         <Page2/>
                     </Route>
                 </Switch>
+                
             </div>
         </Router>
      );
 }
  
-export default Details;
+export default App;
 
 

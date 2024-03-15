@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import './Fstpage.css';
-import Details from './Details';
+import {Link} from 'react-router-dom/cjs/react-router-dom.min';
+
 
 function Fstpage() {
   
-  const [showDetails, setShowDetails] = useState(false);
+  // const [showDetails, setShowDetails] = useState(false);
 
-  function handleButtonClick(page) {
-    if (page === 'enter') {
-           setShowDetails(true);
+  // function handleButtonClick(page) {
+  //   if (page === 'enter') {
+  //          setShowDetails(true);
            
-    }
-  }
+  //   }
+  // }
   
   return (
    
     
         
     <div className="app-container">      
-    {showDetails ? (
+    {/* {showDetails ? (
       <Details />
-        ) : (
+        ) : ( */}
           <>
     
    
@@ -28,12 +29,15 @@ function Fstpage() {
         <div className="left-container">
         <button1>Gym View</button1>
         <div>
-          <button2 onClick={() => handleButtonClick('enter')}>Enter</button2>
+          {/* <button2 onClick={() => handleButtonClick('enter')}>Enter</button2> */}
+          <button2><Link to="/enter">Enter</Link></button2>
           <p1 > Enter the gym by entering your details</p1>
-          <button3 onClick={() => handleButtonClick('view')}>View</button3>
+          {/* <button3 onClick={() => handleButtonClick('home')}>View</button3> */}
+          <button3><Link to="/home">View</Link> </button3>
           <p1>View how many people are working out</p1>
         </div>
-        </div>)}
+        </div>
+        )
 
         
         <div className="right-container">
@@ -45,7 +49,7 @@ function Fstpage() {
         </div>
         </div>
         </>
-        )}
+        
     
 
  
