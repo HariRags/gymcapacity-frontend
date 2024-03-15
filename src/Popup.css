@@ -28,7 +28,7 @@ p{
     text-align: center;
     font-size: 2rem;
     font-weight: 400;
-
+    font-family: Montserrat,sans-serif;
     
 
 
@@ -49,6 +49,7 @@ p{
 
 .popup-form input{
     border: 0;
+    font-family: Montserrat,sans-serif;
 }
 
 .roll-exit{
@@ -81,7 +82,7 @@ p{
     align-self: center;
     margin-left: 4.2vw;
     margin-top: 7.51vh;
-
+    font-family: Montserrat,sans-serif;
     font-size: 18px;
     font-weight: 400;
     border:0;
