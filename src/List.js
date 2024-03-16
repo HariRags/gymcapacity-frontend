@@ -9,15 +9,15 @@ function Page2() {
   // Changing colour of arrow buttons 
   const [FirstPageOpacity,SetFirstPageOpacity] = useState('0.29');
   let [LastPageOpacity, SetLastPageOpacity]= useState('0.29');
-
   const Student = {
     id: generateUniqueId(),
     name: "",
   };
-  const [students, setStudents] = useState([Student,Student,Student,Student,Student]);
+  const [students, setStudents] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExitMode, setExitMode] = useState(false);
+  
   // function addStudent() {
   //   if (students.length <= 5) {
   //     for (let i = 0; i < 5; ++i) {
@@ -108,10 +108,9 @@ function Page2() {
           
         </article> */}
         <article className="list">
-          {Array.from({ length: 5 }, (_, index) => {
-            const student = students[currentIndex+index] || {}; // If the student doesn't exist, use an empty object
+          {students.filter(student=>student.name!== '').slice(currentIndex,currentIndex+5).map((student) => { // If the student doesn't exist, use an empty object
             return (
-              <div key={index} id="item">
+              <div key={student.id} id="item">
                 <button
                   onClick={() => { setIsPopupOpen(true); removeStudent(student.id); }}
                   id={isExitMode ? 'removeButton':'inexit-remove-button'}

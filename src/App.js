@@ -5,6 +5,7 @@ import Details from "./Details";
 import Page2 from "./List";
 import Lastpage from './Lastpage';
 
+
 const App = () => {
     return ( 
         <Router>
@@ -15,9 +16,9 @@ const App = () => {
                         <Details/>
                     </Route>
                          
-                <Route  path="/">
+                <Route  exact path="/">
                 {/* Render the Fstpage component on the /home route */}
-                <Fstpage />
+                    <Fstpage />
                  </Route>
 
                  <Route path="/lastpage">
@@ -25,7 +26,7 @@ const App = () => {
                  <Lastpage />
                  </Route>
                    
-                    <Route path="/home">
+                    <Route exact path="/home">
                         <Page2/>
                     </Route>
                 </Switch>
@@ -34,6 +35,6 @@ const App = () => {
      );
 }
  
-export default Details;
+export default App;
 
 
