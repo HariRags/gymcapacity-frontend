@@ -12,10 +12,13 @@
   }
   
   .popup-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     height: 16.21vh;
     width: 44.93vw;
-    border-radius: 40px;
+    border-radius: 20px;
     margin-top: 12.3vh;
     box-shadow: 0px 14px 29px 0px #00000040;
   }
@@ -23,9 +26,9 @@
 
 p{
     text-align: center;
-    font-size: 36px;
+    font-size: 2rem;
     font-weight: 400;
-
+    font-family: Montserrat,sans-serif;
     
 
 
@@ -40,12 +43,13 @@ p{
     height: 38.18vh;
     width: 44.93vw;
     margin-top: 11.13vh;
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: 0px 14px 29px 0px #00000040;
 }
 
 .popup-form input{
     border: 0;
+    font-family: Montserrat,sans-serif;
 }
 
 .roll-exit{
@@ -53,7 +57,7 @@ p{
     width: 37.7vw;
     display: flex;
     /* justify-content: center; */
-    border-radius: 40px;
+    border-radius: 20px;
     background-color: #AFF1FF;
     align-items: center;
     box-shadow: 0px 14px 29px 0px #00000040;
@@ -74,11 +78,11 @@ p{
     background-color: #58E1FF;
     width: 29.3vw;
     height: 5.66vh;
-    border-radius: 40px;
+    border-radius: 20px;
     align-self: center;
     margin-left: 4.2vw;
     margin-top: 7.51vh;
-
+    font-family: Montserrat,sans-serif;
     font-size: 18px;
     font-weight: 400;
     border:0;

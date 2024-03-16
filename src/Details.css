@@ -5,21 +5,21 @@ header{
 .details-main{
     margin:0;
     padding: 0;
-    /* min-height: 95vh; */
+    min-height: 95vh;
     font-family: Monsterrat;
-    /* background: url('../public/backgroundv5.png');
+    background: url('../public/backgroundv2.jpg');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-size:cover; */
-    /* background-position: bottom; */
+    background-size:cover;
+    background-position: bottom;
 }
 
-.details-background{
-    background: url('../public/backgroundv5.png');
+/* .details-background{
+    background: url('../public/backgroundv2.png');
     background-size: 100%;
     background-repeat: no-repeat;
     background-size:cover;
-}
+} */
 
 /* #bg2{
     margin-top: 0;
