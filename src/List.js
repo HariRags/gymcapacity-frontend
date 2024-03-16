@@ -1,21 +1,34 @@
 import "./List.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./Form";
 import Popup from "./Popup";
 import {UserMinus} from 'lucide-react';
-import Details from "./Details";
 
 function Page2() {
   // Changing colour of arrow buttons 
   const [FirstPageOpacity,SetFirstPageOpacity] = useState('0.29');
-  let [LastPageOpacity, SetLastPageOpacity]= useState('0.29');
-  const Student = {
-    id: generateUniqueId(),
-    name: "",
-  };
-  const [students, setStudents] = useState([]);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [LastPageOpacity, SetLastPageOpacity] = useState('0.29');
   const [currentIndex, setCurrentIndex] = useState(0);
+  let pageNumber = currentIndex/5;
+
+  const [students, setStudents] = useState([]);
+  useEffect(() => {
+    async function fetchStudents() {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/gym/list/');
+        if (!response.ok)
+          throw new Error('Failed to fetch students');
+        const data = await response.json();
+        console.log(data);
+        setStudents(data);
+      } catch (error) {
+        console.error('Error fetching students', error);
+      }
+    }
+    fetchStudents();
+  }, []);
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isExitMode, setExitMode] = useState(false);
   
   // function addStudent() {
@@ -34,25 +47,15 @@ function Page2() {
   //   }
   // }
   function addStudent() {
-    const emptyIndex = students.findIndex(student => student.name === '');
-      if (emptyIndex !== -1) {
-        // Replace empty slot
-        const updatedStudents = [...students];
-        updatedStudents[emptyIndex] = {
-          name: 'Java',
-          id: generateUniqueId()
-        };
-        setStudents(updatedStudents);
-      } else {
-        // Add new student
-        setStudents(prevStudents => [
-          ...prevStudents,
-          {
-            name: 'Script',
-            id: generateUniqueId()
-          }
-        ]);
+    // Add new student
+    setStudents(prevStudents => [
+      ...prevStudents,
+      {
+        name: 'Script',
+        id: generateUniqueId()
       }
+    ]);
+      
   }
   function actualLength() {
     return students.filter((student)=>student.name!== '').length
@@ -85,7 +88,6 @@ function Page2() {
     return crypto.randomUUID();
   }
   return (
-
     <div className="container">
       <section className="main-content">
         <header className="header">
@@ -108,8 +110,10 @@ function Page2() {
           
         </article> */}
         <article className="list">
-          {students.filter(student=>student.name!== '').slice(currentIndex,currentIndex+5).map((student) => { // If the student doesn't exist, use an empty object
+          {students.filter(student=>student.username!== '').slice(currentIndex,currentIndex+5).map((student) => { // If the student doesn't exist, use an empty object
+            
             return (
+              
               <div key={student.id} id="item">
                 <button
                   onClick={() => { setIsPopupOpen(true); removeStudent(student.id); }}
@@ -118,7 +122,7 @@ function Page2() {
                   <UserMinus />
                 </button>
                 <div id={isExitMode ?  'name':'inexit-name'}>
-                  <div className="text">{student.name}</div>
+                  <div className="text">{student.username}</div>
                 </div>
               </div>
             );

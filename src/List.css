@@ -254,6 +254,9 @@
   background-color: transparent;
   margin: top 8vh;
 }
+.left-arrow:hover,.right-arrow:hover{
+  background-color: transparent;
+}
 .left-arrow{
   margin-left:12.5vw;
 }
@@ -312,3 +315,4 @@
 #inexit-enter-button{
   display: none;
 }
+
