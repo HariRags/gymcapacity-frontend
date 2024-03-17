@@ -9,7 +9,6 @@ function Page2() {
   const [FirstPageOpacity,SetFirstPageOpacity] = useState('0.29');
   const [LastPageOpacity, SetLastPageOpacity] = useState('0.29');
   const [currentIndex, setCurrentIndex] = useState(0);
-  let pageNumber = currentIndex/5;
 
   const [students, setStudents] = useState([]);
   useEffect(() => {
@@ -19,7 +18,6 @@ function Page2() {
         if (!response.ok)
           throw new Error('Failed to fetch students');
         const data = await response.json();
-        console.log(data);
         setStudents(data);
       } catch (error) {
         console.error('Error fetching students', error);
