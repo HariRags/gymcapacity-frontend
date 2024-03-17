@@ -25,7 +25,7 @@ function Page2() {
       }
     }
     fetchStudents();
-  }, []);
+  }, [students]);
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isExitMode, setExitMode] = useState(false);
