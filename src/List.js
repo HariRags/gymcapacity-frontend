@@ -29,6 +29,9 @@ function Page2() {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isExitMode, setExitMode] = useState(false);
+
+  //deleting student 
+  const [DeleteStudent,setDeleteStudent] = useState({name:'',id:''});
   
   // function addStudent() {
   //   if (students.length <= 5) {
@@ -79,9 +82,6 @@ function Page2() {
       SetLastPageOpacity('0.29')
     }
   }
-  function removeStudent(studentID) {
-    setStudents(students.filter((student) => student.id !== studentID));
-  }
   // since i didn't have acess to id yet i made a random id generator
   function generateUniqueId() {
     return crypto.randomUUID();
@@ -115,7 +115,7 @@ function Page2() {
               
               <div key={student.id} id="item">
                 <button
-                  onClick={() => { setIsPopupOpen(true); removeStudent(student.id); }}
+                  onClick={() => { setIsPopupOpen(true); setDeleteStudent(student)}}
                   id={isExitMode ? 'removeButton':'inexit-remove-button'}
                 >
                   <UserMinus />
@@ -146,7 +146,7 @@ function Page2() {
         
       </section>
       <aside className="feedback">{<Form/>}</aside>
-      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false)}/>
+      <Popup isOpen={isPopupOpen} onClose={()=>setIsPopupOpen(false) } student={DeleteStudent}/>
       {/* <div className="footer">----------------------------------------</div> */}
       
     </div>
