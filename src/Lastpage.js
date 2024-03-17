@@ -17,16 +17,29 @@ import { useHistory } from 'react-router-dom';
     
         // Cleanup the timer on component unmount
         return () => clearTimeout(timer);
-      }, [history]);
-
-
-
+    }, [history]);
+    
+    const [deletedStudent, setDeletedStudent] = useState({});
+    useEffect(() => {
+      async function fetchStudents() {
+        try {
+          const response = await fetch('http://127.0.0.1:8000/gym/last-deleted-user/');
+          if (!response.ok)
+            throw new Error('Failed to fetch students');
+          const data = await response.json();
+          setDeletedStudent(data);
+        } catch (error) {
+          console.error('Error fetching students', error);
+        }
+      }
+      fetchStudents();
+    }, []);
   return (
     <div className="lastpagecontainer">
     <div className="lastpg">
       
       <p>You have exited the gym.<br></br>
-      Rest well <p5>Abhimanyu </p5>and<br></br> come back soon!</p>
+      Rest well <p5>{deletedStudent.name} </p5>and<br></br> come back soon!</p>
       
       
     </div> 

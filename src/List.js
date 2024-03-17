@@ -33,32 +33,6 @@ function Page2() {
   //deleting student 
   const [DeleteStudent,setDeleteStudent] = useState({name:'',id:''});
   
-  // function addStudent() {
-  //   if (students.length <= 5) {
-  //     for (let i = 0; i < 5; ++i) {
-  //       if (students[i].name == '') {
-  //         students[i].name = 'Manish'
-  //         students[i].id = generateUniqueId()
-  //         break;
-  //       }
-  //     }
-  //   }
-  //   else {
-  //     const newStudent = { ...Student, id: generateUniqueId() };
-  //     setStudents([...students, newStudent]);
-  //   }
-  // }
-  function addStudent() {
-    // Add new student
-    setStudents(prevStudents => [
-      ...prevStudents,
-      {
-        name: 'Script',
-        id: generateUniqueId()
-      }
-    ]);
-      
-  }
   function actualLength() {
     return students.filter((student)=>student.name!== '').length
   }
@@ -83,31 +57,12 @@ function Page2() {
     }
   }
   // since i didn't have acess to id yet i made a random id generator
-  function generateUniqueId() {
-    return crypto.randomUUID();
-  }
   return (
     <div className="container">
       <section className="main-content">
         <header className="header">
           <strong>{isExitMode? actualLength():`${actualLength()}/20`} </strong>people are on the grind!
         </header>
-        {/* <article className="list">
-          {students.filter(student=>student.name!== '').map((student) => (
-            <div key={student.id} id="item">
-              <button
-                onClick={() =>{ setIsPopupOpen(true); removeStudent(student.id);}}
-                id="removeButton"
-              >
-                <UserMinus />
-              </button>
-              <div id="name">
-                <div className="text">{student.name}</div>
-              </div>
-            </div>
-          ))}
-          
-        </article> */}
         <article className="list">
           {students.filter(student=>student.username!== '').slice(currentIndex,currentIndex+5).map((student) => { // If the student doesn't exist, use an empty object
             
@@ -139,7 +94,7 @@ function Page2() {
             {isExitMode? 'Back':'Exit'}
         </button>
         <Link to="/enter">
-        <button onClick={addStudent} id={isExitMode?"inexit-enter-button":"addButton"}>
+        <button id={isExitMode?"inexit-enter-button":"addButton"}>
             Enter
         </button>
         </Link>
