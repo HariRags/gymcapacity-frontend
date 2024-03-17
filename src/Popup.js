@@ -3,9 +3,11 @@
 import "./Popup.css";
 import {useRef} from 'react';
 import { UserRound } from 'lucide-react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from "react-router";
 
 const Popup = ({ isOpen, onClose,student }) => {
-    
+  const history = useHistory();
     const PopupRef=useRef();
     const closePopup=(e)=>{
         if (PopupRef.current && !PopupRef.current.contains(e.target)){
@@ -27,7 +29,7 @@ const Popup = ({ isOpen, onClose,student }) => {
       });
       if (response.ok) {
         console.log('Student deleted Successfully!!');
-
+        history.push("/exit-popup")
       } else {
         console.error('Failed to delete Student', response.statusText);
       }

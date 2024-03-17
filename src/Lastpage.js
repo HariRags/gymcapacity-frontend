@@ -13,13 +13,13 @@ import { useHistory } from 'react-router-dom';
         const timer = setTimeout(() => {
             setShowPopup(false);
             history.push('/home'); // Go back to the list page after 5 seconds
-          }, 2000);
+          }, 5000);
     
         // Cleanup the timer on component unmount
         return () => clearTimeout(timer);
     }, [history]);
     
-    const [deletedStudent, setDeletedStudent] = useState({});
+    const [deletedStudent, setDeletedStudent] = useState({name:'', id:''});
     useEffect(() => {
       async function fetchStudents() {
         try {
@@ -39,7 +39,7 @@ import { useHistory } from 'react-router-dom';
     <div className="lastpg">
       
       <p>You have exited the gym.<br></br>
-      Rest well <p5>{deletedStudent.name} </p5>and<br></br> come back soon!</p>
+      Rest well <p5>{deletedStudent.username} </p5>and<br></br> come back soon!</p>
       
       
     </div> 
