@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Form from "./Form";
 import Popup from "./Popup";
 import {UserMinus} from 'lucide-react';
+import {Link} from 'react-router-dom/cjs/react-router-dom.min';
 
 function Page2() {
   // Changing colour of arrow buttons 
@@ -137,9 +138,11 @@ function Page2() {
         <button id={isExitMode? 'inexit-exit-button' : "exitButton"} onClick={()=>setExitMode(!isExitMode)}>
             {isExitMode? 'Back':'Exit'}
         </button>
+        <Link to="/enter">
         <button onClick={addStudent} id={isExitMode?"inexit-enter-button":"addButton"}>
             Enter
         </button>
+        </Link>
         
       </section>
       <aside className="feedback">{<Form/>}</aside>

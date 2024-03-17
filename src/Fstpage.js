@@ -30,14 +30,14 @@ function Fstpage() {
         <button1>Gym View</button1>
         <div>
           {/* <button2 onClick={() => handleButtonClick('enter')}>Enter</button2> */}
-          <button2><Link to="/enter">Enter</Link></button2>
+          <Link to="/enter"><button2>Enter</button2></Link>
           <p1 > Enter the gym by entering your details</p1>
           {/* <button3 onClick={() => handleButtonClick('home')}>View</button3> */}
-          <button3><Link to="/home">View</Link> </button3>
+          <Link to="/home"><button3>View </button3></Link>
           <p1>View how many people are working out</p1>
         </div>
         </div>
-        )
+        
 
         
         <div className="right-container">
