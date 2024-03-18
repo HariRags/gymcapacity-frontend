@@ -41,10 +41,11 @@ function Fstpage() {
 
         
         <div className="right-container">
-      
+       
         <div className="overlay-text">
-        <p className="overlay-text">Suffer the pain<br></br>of discipline.<br></br>Or suffer the<br></br>pain of regret...</p>
         <div className='skyshadow'>
+        <p className="overlay-text">Suffer the pain<br></br>of discipline.<br></br>Or suffer the<br></br>pain of regret...</p>
+        
         </div>
         </div>
         </div>
