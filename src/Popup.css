@@ -98,6 +98,13 @@ p{
     outline: none; 
 } */
 
+.wrong-rollno{
+    color:red;
+    font-size: 1rem;
+
+
+}
+
 @media only screen and (max-width: 768px){
 
     .popup-heading {

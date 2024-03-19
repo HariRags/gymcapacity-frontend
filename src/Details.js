@@ -6,10 +6,13 @@ import "./Details.css";
 function Details() {
     const [name, setName] = useState("");
     const [rollNo, setRollNo] = useState("");
+    const [isPending,setIsPending]=useState(false);
     const history = useHistory();
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        setIsPending(true);
         
         fetch('http://127.0.0.1:8000/gym/register/', {
             method: 'POST',
@@ -23,6 +26,7 @@ function Details() {
         })
         .then(response => {
             if (response.ok) {
+                setIsPending(false);
                 history.push('home');
             } else {
                 // Handle error
@@ -59,7 +63,11 @@ function Details() {
                             onChange={(event) => setName(event.target.value)}
                         />
                     </div>
-                    <button type="submit" id="submit-button">Proceed</button>
+                    <div className="proceed">
+                    { !isPending && <button type="submit" id="submit-button">Proceed</button>}
+                    { isPending && <button type="submit" id="submit-button">Adding...</button>}
+                    </div>
+                    
                 </form>
             </div>
         </div>
