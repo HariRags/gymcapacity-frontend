@@ -94,9 +94,6 @@ p{
     margin-left: 5%;
 }
 
-/* .roll-exit input:focus {
-    outline: none; 
-} */
 
 .wrong-rollno{
     color:red;
@@ -136,8 +133,6 @@ p{
     .roll-exit {
         width: 90vw;
         max-width: 400px;
-        /* height: auto; */
-        /* margin-top: 10%; */
     }
     
     .roll-exit input {

@@ -14,27 +14,25 @@ header{
     background-position: bottom;
 }
 
-/* .details-background{
-    background: url('../public/backgroundv2.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-size:cover;
-} */
-
-/* #bg2{
-    margin-top: 0;
-    margin-left: ;
+.header-div-details {
+    display: flex;
+    align-items: center;
+    margin-left: 4vw;
+    
 }
 
-#bg1{
-    margin-left: 0;
-    margin-top: 1vh;
-} */
-
-
+.home-icon {
+    box-shadow: 0px 14px 29px 0px #00000040;
+    height: 7vh ;
+    width: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
 
 .details-header{
-    margin-left: 27.5vw;
+    margin-left: 20vw;
     margin-top: 5vh;
     width: max(44.93vw,300px);
     height: 15.37vh;
@@ -65,7 +63,7 @@ header{
     background-color: #fff;
 }
 
-.roll-no{
+.name{
     margin-left: 3.611vw;
     padding: 1vh 1vw;
     padding-left: 2vw;
@@ -80,7 +78,7 @@ header{
     align-items: center;
     
 }
-.name{
+.roll-no{
     margin-top: 6.01vh;
     margin-left: 3.611vw;
     padding: 1vh 1vw;
@@ -118,15 +116,6 @@ header{
     font-size: 1.5rem;
     font-weight: 500;
 
-    /* width:29.30vw;
-    height: 5.37vh;
-    margin-left: 7.77vw;
-    margin-top: 10.7vh;
-    border-radius:2.8vw ;
-    border: none;
-    background: #58E1FF;
-    box-shadow: 0px 14px 29px 0px #00000040;
-    font-size: 1.5rem; */
 }
 
 .roll-no input, .name input{
