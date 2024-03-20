@@ -71,6 +71,8 @@ function Page2() {
     if (PrevIndex >= 0) {
       setCurrentIndex(PrevIndex);
     }
+    else
+      setCurrentIndex(0);
   }
 
   
@@ -113,11 +115,11 @@ function Page2() {
             <path d="M1.83299e-06 1.70102L4.95388e-07 32.3019C0.000956064 32.6117 0.0848756 32.9154 0.24273 33.1803C0.400586 33.4451 0.626393 33.6611 0.895852 33.8051C1.16531 33.949 1.46822 34.0153 1.77197 33.997C2.07571 33.9787 2.3688 33.8763 2.61967 33.701L24.325 18.4006C25.225 17.7665 25.225 16.2398 24.325 15.604L2.61967 0.303583C2.36932 0.12648 2.07609 0.022623 1.77184 0.00329525C1.46758 -0.0160325 1.16395 0.0499083 0.893917 0.193954C0.623888 0.337999 0.397789 0.554639 0.24019 0.820337C0.0825939 1.08603 -0.000476898 1.39063 1.83299e-06 1.70102Z" fill="#43C2DD" fill-opacity={LastPageOpacity} />
           </svg></button>
         </article>
-        <button id={isExitMode ? 'inexit-exit-button' : "exitButton"} onClick={() => { setExitMode(!isExitMode); fixArrows() }}>
+        <button id={isExitMode ? 'inexit-exit-button' : "exitButton"} onClick={() => { setExitMode(!isExitMode); fixArrows(currentIndex) }}>
             {isExitMode? 'Back':'Exit'}
         </button>
         <Link to="/enter">
-        <button id={isExitMode?"inexit-enter-button":"addButton"} onClick={()=>{fixArrows()}}>
+        <button id={isExitMode?"inexit-enter-button":"addButton"} onClick={()=>{fixArrows(currentIndex)}}>
             Enter
         </button>
         </Link>
