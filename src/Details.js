@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import { UserRound } from "lucide-react";
-import { useHistory } from "react-router-dom";
+import { UserRound, Home } from "lucide-react";
+import { useHistory,Link } from "react-router-dom";
 import "./Details.css";
+
 
 function Details() {
     const [name, setName] = useState("");
     const [rollNo, setRollNo] = useState("");
+    const [isPending,setIsPending]=useState(false);
     const history = useHistory();
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setIsPending(true);
         
         fetch('http://127.0.0.1:8000/gym/register/', {
             method: 'POST',
@@ -23,6 +28,7 @@ function Details() {
         })
         .then(response => {
             if (response.ok) {
+                setIsPending(false);
                 history.push('home');
             } else {
                 // Handle error
@@ -37,8 +43,28 @@ function Details() {
     return (
         <div className="details-background">
             <div className="details-main">
-                <header className="details-header"> Please enter your details</header>
+            <header className="header-div-details"> 
+            <Link to='/home'>
+                <div className="home-icon-container">
+                    <div className="home-icon"> <Home/></div>
+                </div>
+            </Link>
+                <div className="details-header"> Please enter your details</div>
+            </header>
                 <form className="details-form" onSubmit={handleSubmit}>
+                    
+                    <div className="name">
+                        <UserRound className="user"/>
+                        <input
+                            type="text"
+                            required
+                            placeholder="Enter your Name"
+                            value={name}
+                            onChange={(event) => setName(event.target.value)}
+                        />
+                        
+                    </div>
+
                     <div className="roll-no">
                         <UserRound className="user"/>
                         <input
@@ -49,17 +75,12 @@ function Details() {
                             onChange={(event) => setRollNo(event.target.value)}
                         />
                     </div>
-                    <div className="name">
-                        <UserRound className="user"/>
-                        <input
-                            type="text"
-                            required
-                            placeholder="Enter your Name"
-                            value={name}
-                            onChange={(event) => setName(event.target.value)}
-                        />
+
+                    <div className="proceed">
+                    { !isPending && <button type="submit" id="submit-button">Proceed</button>}
+                    { isPending && <button type="submit" id="submit-button">Adding...</button>}
                     </div>
-                    <button type="submit" id="submit-button">Proceed</button>
+                    
                 </form>
             </div>
         </div>

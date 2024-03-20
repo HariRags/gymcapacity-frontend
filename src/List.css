@@ -229,17 +229,11 @@
     flex-direction: column;
     align-items: center;
    background: white;
-    /* justify-content: center; */
   }
 
   .main-content,
   .feedback {
     width: 95%;
-    /* border-radius: 40px; */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
   }
 
   .header {
@@ -252,17 +246,12 @@
   
   }
 
-  /* .list {
-    margin: 0;
-    margin-top: 2vh;
-  } */
 
   #item {
     margin-bottom: 1vw;
   }
 
   #name {
-    /* margin-left: 5vw; */
     background: #58e1ff;
     height: 7vh;
     width: 90%;
@@ -281,8 +270,6 @@
 
   #addButton {
     margin-top: 2vh;
-    /* margin-left: 50%;
-    transform: translateX(-50%); */
     width: 100%;
     font-size: 1.5rem;
     font-weight: 400;
@@ -319,8 +306,6 @@
   
 }
 
-/* New Additions */
-/* Arrows */
 
 .left-arrow,.right-arrow{
   border: none;
