@@ -1,14 +1,28 @@
 import "./Popup.css";
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { UserRound } from 'lucide-react';
 import { useHistory } from "react-router";
+import Lastpage from "./Lastpage";
 
 const Popup = ({ isOpen, onClose, student }) => {
   const history = useHistory();
   const PopupRef = useRef();
   const [isInvalidPassword, setIsInvalidPassword] = useState(false);
   const [isPending,setIsPending]=useState(false);
+  const [isCorrectPassword, setIsCorrectPassword] = useState(false);
+  const [showLastPage, setShowLastPage] = useState(false); // Track if Lastpage should be shown
 
+  useEffect(() => {
+    let timer;
+    if (showLastPage) {
+      timer = setTimeout(() => {
+        onClose(); // Close the popup after 5 seconds
+        history.push("/home"); // Redirect to list page after 2 seconds
+      }, 2000);
+    }
+
+    return () => clearTimeout(timer);
+  }, [showLastPage, onClose, history]);
 
   const closePopup = (e) => {
     if (PopupRef.current && !PopupRef.current.contains(e.target)) {
@@ -16,8 +30,6 @@ const Popup = ({ isOpen, onClose, student }) => {
       onClose();
     }
   }
-
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +50,9 @@ const Popup = ({ isOpen, onClose, student }) => {
       if (response.ok) {
         console.log('Student deleted Successfully!!');
         setIsPending(false);
-        history.push("/exit-popup")
+        setIsCorrectPassword(true);
+        setShowLastPage(true); // Set to true when password is correct to show Lastpage
+        
       } else {
         setIsInvalidPassword(true);
         setIsPending(false);
@@ -60,17 +74,19 @@ const Popup = ({ isOpen, onClose, student }) => {
           <div className="roll-exit">
             <UserRound className="User" />
             <input type="text" placeholder="Roll No." id="confirm-exit" name="exit-roll" required />
-            
           </div>
           <div >
-          {!isPending && <button className="exit-button" type="submit">Exit</button>}
-          {isPending && <button className="exit-button" type="submit">Verifying...</button>}
+            {!isPending && <button className="exit-button" type="submit">Exit</button>}
+            {isPending && <button className="exit-button" type="submit">Verifying...</button>}
           </div>
-          
         </form>
       </div>
+      {isCorrectPassword && showLastPage && <Lastpage student={student} />} {/* Render Lastpage if password is correct and showLastPage is true */}
     </div>
   ) : null;
 };
 
 export default Popup;
+
+
+
