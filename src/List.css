@@ -106,7 +106,7 @@
   
   .form {
     width: 100%;
-    margin:6vh 3.6vw ;
+    margin:3vh 3.6vw ;
     padding: 20px;
     
     border-radius: 5px;
@@ -189,7 +189,7 @@
   }
 
   .form-group-message{
-    height: 18vh;
+    height: 22vh;
     margin-bottom: 20px;
     width: 31vw;
     border-radius: 15px;
@@ -213,6 +213,13 @@
     letter-spacing: 0em;
     text-align: center;
 
+  }
+
+  .success{
+    color:#6B6B6B;
+  }
+  .error{
+    color:#ff0000;
   }
    
 

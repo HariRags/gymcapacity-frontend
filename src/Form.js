@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -7,6 +6,14 @@ const Form = () => {
     feedback_type: '',
     description: ''
   });
+  const [show, setShow] = useState(true);
+  const handleClick = () => {
+    setTimeout(() => {
+      setShow(false)
+    }, 2000);
+
+    setShow(true);
+  };
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -65,10 +72,10 @@ const Form = () => {
         <div className="form-group-message">
           <textarea name="description" value={formData.description} onChange={handleChange} required placeholder="Message" rows="4"></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleClick}>Submit</button>
       </form>
-      {successMessage && <div className="success">{successMessage}</div>}
-      {errorMessage && <div className="error">{errorMessage}</div>}
+      {successMessage && <div className="success">{show && successMessage}</div>}
+      {errorMessage && <div className="error">{show && errorMessage}</div>}
     </div>
   );
 };
