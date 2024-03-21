@@ -12,8 +12,8 @@ import { useHistory } from 'react-router-dom';
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowPopup(false);
-            history.push('/home'); // Go back to the list page after 5 seconds
-          }, 5000);
+            history.push('/home'); // Go back to the list page after 2 seconds
+          }, 2000);
     
         // Cleanup the timer on component unmount
         return () => clearTimeout(timer);
