@@ -66,6 +66,8 @@ const Popup = ({ isOpen, onClose, student }) => {
         setIsCorrectPassword(true);
         setShowLastPage(true); // Set to true when password is correct to show Lastpage
         
+        
+        
       } else {
         setIsInvalidPassword(true);
         setIsPending(false);
