@@ -16,13 +16,26 @@ const Popup = ({ isOpen, onClose, student }) => {
     let timer;
     if (showLastPage) {
       timer = setTimeout(() => {
-        onClose(); // Close the popup after 5 seconds
+        onClose(); // Close the popup after 2 seconds
+        setShowLastPage(false); // Reset showLastPage state after timeout
         history.push("/home"); // Redirect to list page after 2 seconds
       }, 2000);
     }
 
     return () => clearTimeout(timer);
   }, [showLastPage, onClose, history]);
+
+  useEffect(() => {
+    let resetTimer;
+    if (isCorrectPassword && showLastPage) {
+      resetTimer = setTimeout(() => {
+        setIsCorrectPassword(false);
+        setShowLastPage(false);
+      }, 2000); // Reset after 2 seconds
+    }
+
+    return () => clearTimeout(resetTimer);
+  }, [isCorrectPassword, showLastPage]);
 
   const closePopup = (e) => {
     if (PopupRef.current && !PopupRef.current.contains(e.target)) {
@@ -87,6 +100,3 @@ const Popup = ({ isOpen, onClose, student }) => {
 };
 
 export default Popup;
-
-
-

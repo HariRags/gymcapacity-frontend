@@ -36,6 +36,7 @@ import { useHistory } from 'react-router-dom';
             throw new Error('Failed to fetch students');
           const data = await response.json();
           setDeletedStudent(data);
+          
         } catch (error) {
           console.error('Error fetching students', error);
         }
